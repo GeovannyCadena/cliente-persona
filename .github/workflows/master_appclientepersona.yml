@@ -35,6 +35,8 @@ jobs:
         with:
           name: java-app
           path: build/libs/*.jar
+      - name: List generated files
+        run: ls -R build/libs
 
   deploy:
     runs-on: ubuntu-latest
