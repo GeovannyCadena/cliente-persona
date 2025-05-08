@@ -67,5 +67,5 @@ jobs:
         with:
           app-name: 'appClientePersona'
           slot-name: 'Production'
-          package: 'build/libs/cliente-persona-0.0.1-SNAPSHOT.jar'
+          package: '*cliente-persona-0.0.1-SNAPSHOT.jar'
           
