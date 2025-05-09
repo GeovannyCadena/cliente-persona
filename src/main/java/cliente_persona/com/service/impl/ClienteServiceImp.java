@@ -25,7 +25,7 @@ public class ClienteServiceImp implements ClienteService {
 
     public ClienteResponseDTO saveCliente(ClienteDTO clienteDTO) {
         Cliente cliente = clienteRepository.save(mapToEntity(clienteDTO));
-        clienteProducer.enviarMensajeCliente(cliente.getNombre());
+//        clienteProducer.enviarMensajeCliente(cliente.getNombre());
         System.out.println("Mensaje enviado: " + cliente.getNombre());
         return mapToResponseDTO(cliente);
     }
