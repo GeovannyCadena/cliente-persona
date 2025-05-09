@@ -31,34 +31,34 @@ public class ClienteControllerIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    // @Test
-    // public void testCrearCliente() throws Exception {
-    //     ClienteDTO clienteDTO = new ClienteDTO();
-    //     clienteDTO.setNombre("Marianela");
-    //     clienteDTO.setGenero("Femenino");
-    //     clienteDTO.setEdad(30);
-    //     clienteDTO.setIdentificacion("1234567894");
-    //     clienteDTO.setDireccion("Calle Ficticia 123");
-    //     clienteDTO.setTelefono("123456789");
-    //     clienteDTO.setClienteId("CLI-001");
-    //     clienteDTO.setContrasena("password123");
-    //     clienteDTO.setEstado(true);
+     @Test
+     public void testCrearCliente() throws Exception {
+         ClienteDTO clienteDTO = new ClienteDTO();
+         clienteDTO.setNombre("Marianela");
+         clienteDTO.setGenero("Femenino");
+         clienteDTO.setEdad(30);
+         clienteDTO.setIdentificacion("1234567894");
+         clienteDTO.setDireccion("Calle Ficticia 123");
+         clienteDTO.setTelefono("123456789");
+         clienteDTO.setClienteId("CLI-001");
+         clienteDTO.setContrasena("password123");
+         clienteDTO.setEstado(true);
 
-    //     mockMvc.perform(post("/api/clientes")
-    //                     .contentType(MediaType.APPLICATION_JSON)
-    //                     .accept(MediaType.APPLICATION_JSON)
-    //                     .content(objectMapper.writeValueAsString(clienteDTO)))
-    //             .andDo(print())
-    //             .andExpect(status().isCreated())
-    //             .andExpect(jsonPath("$.nombre").value("Marianela"))
-    //             .andExpect(jsonPath("$.genero").value("Femenino"))
-    //             .andExpect(jsonPath("$.edad").value(30))
-    //             .andExpect(jsonPath("$.identificacion").value("1234567894"))
-    //             .andExpect(jsonPath("$.direccion").value("Calle Ficticia 123"))
-    //             .andExpect(jsonPath("$.telefono").value("123456789"))
-    //             .andExpect(jsonPath("$.clienteId").value("CLI-001"))
-    //             .andExpect(jsonPath("$.estado").value(true));
-    // }
+         mockMvc.perform(post("/api/clientes")
+                         .contentType(MediaType.APPLICATION_JSON)
+                         .accept(MediaType.APPLICATION_JSON)
+                         .content(objectMapper.writeValueAsString(clienteDTO)))
+                 .andDo(print())
+                 .andExpect(status().isCreated())
+                 .andExpect(jsonPath("$.nombre").value("Marianela"))
+                 .andExpect(jsonPath("$.genero").value("Femenino"))
+                 .andExpect(jsonPath("$.edad").value(30))
+                 .andExpect(jsonPath("$.identificacion").value("1234567894"))
+                 .andExpect(jsonPath("$.direccion").value("Calle Ficticia 123"))
+                 .andExpect(jsonPath("$.telefono").value("123456789"))
+                 .andExpect(jsonPath("$.clienteId").value("CLI-001"))
+                 .andExpect(jsonPath("$.estado").value(true));
+     }
 
     @Test
     public void testGetAllClientes() throws Exception {

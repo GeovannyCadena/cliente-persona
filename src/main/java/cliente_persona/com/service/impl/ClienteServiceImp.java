@@ -5,7 +5,6 @@ import cliente_persona.com.dto.ClienteResponseDTO;
 import cliente_persona.com.exception.NegocioException;
 import cliente_persona.com.model.Cliente;
 import cliente_persona.com.repository.interfaces.ClienteRepository;
-import cliente_persona.com.service.ClienteProducer;
 import cliente_persona.com.service.interfaces.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,13 +19,8 @@ public class ClienteServiceImp implements ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
 
-    @Autowired
-    ClienteProducer clienteProducer;
-
     public ClienteResponseDTO saveCliente(ClienteDTO clienteDTO) {
         Cliente cliente = clienteRepository.save(mapToEntity(clienteDTO));
-//        clienteProducer.enviarMensajeCliente(cliente.getNombre());
-        System.out.println("Mensaje enviado: " + cliente.getNombre());
         return mapToResponseDTO(cliente);
     }
 

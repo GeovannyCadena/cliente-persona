@@ -5,7 +5,6 @@ import cliente_persona.com.dto.ClienteResponseDTO;
 import cliente_persona.com.exception.NegocioException;
 import cliente_persona.com.model.Cliente;
 import cliente_persona.com.repository.interfaces.ClienteRepository;
-import cliente_persona.com.service.ClienteProducer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -27,9 +26,6 @@ class ClienteServiceImpTest {
 
     @InjectMocks
     private ClienteServiceImp clienteServiceImp;
-
-    @Mock
-    private ClienteProducer clienteProducer;
 
     private Cliente cliente;
 
@@ -63,7 +59,6 @@ class ClienteServiceImpTest {
         clienteDTO.setEstado(true);
 
         when(clienteRepository.save(any(Cliente.class))).thenReturn(cliente);
-        doNothing().when(clienteProducer).enviarMensajeCliente(any(String.class));
 
         ClienteResponseDTO response = clienteServiceImp.saveCliente(clienteDTO);
 
