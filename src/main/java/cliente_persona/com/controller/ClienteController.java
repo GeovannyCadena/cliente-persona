@@ -20,6 +20,7 @@ import cliente_persona.com.service.interfaces.ClienteService;
 import java.util.List;
 
 @Tag(name = "Clientes", description = "Operaciones relacionadas con la gestión de clientes")
+@Valid
 @RestController
 @RequestMapping("/api/clientes")
 public class ClienteController {
