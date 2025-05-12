@@ -1,0 +1,10 @@
+services:
+  cliente-persona:
+    build: cliente-persona
+    mem_limit: 512m
+    ports:
+      - "8081:8081"
+    environment:
+      DB_URL: jdbc:h2:mem:testdb
+      DB_USER_NAME: sa
+      DB_PASSWORD:
